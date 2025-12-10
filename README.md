@@ -9,3 +9,4 @@
 - Locators
 - Multi-tab
 - Iframes & Storage
+- Git
