@@ -1,153 +1,309 @@
 # Python Automation Course
 
 ## Mục tiêu khóa học
-Trang bị toàn bộ kiến thức em cần để trở thành **QA Automation Engineer** trong 6 tháng:
-- Python nền tảng đủ dùng cho Automation
+Trang bị toàn bộ kiến thức cần thiết để em trở thành **QA Automation Engineer (Playwright Python)** có thể làm dự án thật, apply job remote:
+- Python nền tảng + Python cho kiểm thử
+- OOP vừa đủ để xây **POM + BasePage** chuẩn
 - Playwright Python từ cơ bản → nâng cao → framework
-- Git/GitHub & workflow tiêu chuẩn
-- CI/CD căn bản (GitHub Actions)
-- API Testing (Python + Playwright API)
-- SQL cơ bản–trung cấp
-- Performance Testing bằng JMeter
-- Kỹ năng QA/AUT thực chiến
+- Pytest (test runner, fixtures, parametrize, markers)
+- Git, GitHub & workflow làm việc nhóm
+- CI/CD căn bản với GitHub Actions
+- API Testing, SQL, Performance (JMeter) mức cần thiết cho Automation
 
 ---
 
-## Lộ trình tổng quan (Curriculum Overview)
-
-### **PHẦN 1 – Python Fundamentals (Ngày 1 → 14)**
-1. Day 1 – Variables, Data Types, Operators, If/Else
-2. Day 2 – Lists, List Operations, Looping
-3. Day 3 – Dictionaries
-4. Day 4 – Strings & String Methods
-5. Day 5 – Functions, Arguments, Return
-6. Day 6 – Modules, Imports, Folder Structure
-7. Day 7 – Try/Except & Debugging
-8. Day 8 – File I/O & JSON
-9. Day 9 – Data Structures Summary
-10. Day 10 – Mini Project 1
-11. Day 11–14 – Ôn tập + thực hành Python theo hướng Automation
+## Năng lực đầu ra
+Sau khi bám hết giáo trình và làm bài tập nghiêm túc, em sẽ:
+- Viết được test UI tự động với Playwright Python theo POM, BasePage
+- Thiết kế, tổ chức, refactor framework automation hoàn chỉnh
+- Chạy test trên CI (GitHub Actions) với report/video đính kèm
+- Viết được test API bằng Python/Playwright
+- Dùng SQL để verify dữ liệu
+- Dùng JMeter để chạy basic load test
+- Làm việc được với Git flow (feature branch, PR, review)
 
 ---
 
-### **PHẦN 2 – Playwright Automation (Ngày 15 → 60)**
-#### **Playwright Core**
-- Cài đặt & cấu trúc project
-- Page, Browser, Context
-- Locator types & best practices
-- Waits, Assertions
-- Actions (click, fill, upload, keyboard, mouse)
-- Handle iframe, popup, multi-tabs
-- LocalStorage, cookies
-- Record video, screenshot
+## PHASE 1 – Python Fundamentals (≈2 tuần)
+**Mục tiêu:** Đủ nền Python để không "đơ" khi đọc/viết code Playwright.
 
-#### **POM (Page Object Model)**
-- BasePage chuẩn
-- Page class tách locator & hành vi
-- Reusable components
-- Fixtures nâng cao
+- Cài đặt môi trường:
+  - Python 3.x, pip
+  - Virtualenv / venv
+  - VS Code + extension Python
+  - requirements.txt (cài thư viện qua pip)
 
-#### **Test Architecture**
-- Folder structure chuẩn
-- Config đa môi trường
-- Data-driven testing
-- Custom assertions
+- Ngày 1–2: Biến, kiểu dữ liệu, toán tử, if/else
+  - variable, naming
+  - int, float, bool, str
+  - toán tử số học, so sánh, logic
+  - if / elif / else
 
-#### **Nâng cao**
-- Mock API (network interception)
-- Parallel execution
-- Retry logic
-- Report HTML nâng cao
+- Ngày 3–4: List & Loop
+  - list, indexing, slicing
+  - for loop
+  - break, continue
+  - list lồng list (mô phỏng table)
+
+- Ngày 5: Dictionary
+  - key / value
+  - update, pop, get
+  - dict trong list, list trong dict
+
+- Ngày 6: String cho automation
+  - lower, upper, strip, replace, split, join
+  - xử lý text UI, email, URL
+
+- Ngày 7: Function
+  - định nghĩa hàm
+  - tham số, giá trị trả về
+  - helper function dùng lại
+
+- Ngày 8: Exception & Debug
+  - try/except
+  - raise
+  - tư duy debug (đọc traceback, thêm print/log)
+
+- Ngày 9: File I/O & JSON
+  - đọc/ghi file
+  - JSON cho API test & config
+
+- Ngày 10: Mini Project Python nhỏ
+  - CRUD user / danh sách / filter / validate
 
 ---
 
-### **PHẦN 3 – Git & GitHub (Ngày 61 → 70)**
-- Git cơ bản: add, commit, push, pull
-- Branching: feature, develop, main
-- Pull Request & Review workflow
+## PHASE 2 – Python for Test & OOP (≈1–1.5 tuần)
+**Mục tiêu:** Hiểu đủ OOP và cấu trúc code để xây POM sau này.
+
+- Control Flow nâng cao
+  - for nâng cao, while
+  - pattern tìm kiếm, filter list
+
+- OOP Part 1 – Class, Object, Constructor
+  - class, object, attribute, method
+  - `__init__`, `self`
+  - ví dụ class đơn giản theo hướng automation
+
+- OOP Part 2 – Encapsulation & Inheritance
+  - đóng gói hành vi
+  - BasePage concept
+  - class con kế thừa BasePage
+
+- OOP → POM demo nhỏ
+  - LoginPage class (giả lập, chưa gắn Playwright)
+  - test gọi method của page
+
+---
+
+## PHASE 3 – Pytest Basics (≈1 tuần)
+**Mục tiêu:** Nắm test runner chuẩn để chạy Playwright.
+
+- Cài đặt pytest, cấu trúc thư mục tests
+- Quy tắc đặt tên file/test
+- assert trong pytest
+- fixture cơ bản (setup/teardown)
+- parametrize (chạy nhiều bộ data)
+- markers (skip, smoke, regression …)
+
+---
+
+## PHASE 4 – Playwright Core (≈3 tuần)
+**Mục tiêu:** Làm chủ Playwright mức đủ để test mọi web app phổ biến.
+
+- Setup Playwright
+  - cài đặt
+  - sinh test đầu tiên
+  - cấu trúc project base
+
+- Playwright Concepts
+  - Browser / Context / Page
+  - sync vs async API (chọn 1 hướng ổn định)
+
+- Locator Mastery
+  - get_by_text, get_by_role, CSS, XPath
+  - nth, filter, locator chaining
+  - strict mode & cách fix
+
+- Actions
+  - click, fill, type, hover
+  - check/uncheck, select
+  - upload/download file
+  - keyboard, mouse
+
+- Assertions & Waits
+  - auto-wait
+  - to_be_visible, to_have_text, to_have_url…
+  - xử lý flaky test do timing
+
+- Iframe, Popup, Multi-tab
+  - switch frame
+  - handle new tab/window
+
+- Network & API trong Playwright
+  - chặn request/response
+  - mock dữ liệu
+
+- LocalStorage, Cookies
+  - lưu, đọc, clear
+
+- Tracing, Screenshot, Video
+  - bật trace
+  - chụp hình, quay video khi fail
+
+---
+
+## PHASE 5 – POM & Framework Architecture (≈2 tuần)
+**Mục tiêu:** Từ "biết xài Playwright" → thành "biết xây framework dùng được lâu dài".
+
+- Thiết kế BasePage
+  - nhận `page`
+  - methods dùng chung (wait, click an toàn…)
+
+- Page Object Model
+  - tách locator / action
+  - LoginPage, DashboardPage, Menu, v.v.
+
+- Tổ chức thư mục framework
+  - `tests/`, `pages/`, `fixtures/`, `config/`, `utils/`, `data/`
+
+- Fixtures nâng cao (pytest + Playwright)
+  - tạo browser, context, page dùng lại
+  - login trước test (precondition)
+
+- Data-driven tests
+  - đọc data từ file (JSON/CSV)
+  - chạy test với nhiều bộ data
+
+- Logging & Report
+  - tích hợp report HTML
+  - log step quan trọng
+
+- Refactor & Best Practices
+  - DRY, SRP ở mức QA cần
+  - đặt tên rõ nghĩa
+
+---
+
+## PHASE 6 – Git & GitHub (≈1 tuần)
+**Mục tiêu:** Làm việc như 1 automation dev trong team.
+
+- Git cơ bản
+  - init, clone, add, commit
+  - push, pull
+
+- Branching workflow
+  - main / develop / feature
+
+- Pull Request & Code Review
 - Resolve conflict
 - Tagging & versioning
-- Build project structure để up repo chuẩn
 
 ---
 
-### **PHẦN 4 – CI/CD với GitHub Actions (Ngày 71 → 80)**
-- YAML cơ bản
-- Trigger pipeline
-- Install Python + Playwright trong CI
+## PHASE 7 – CI/CD với GitHub Actions (≈1 tuần)
+**Mục tiêu:** Tự động hoá chạy test trên CI.
+
+- Giới thiệu YAML
+- Workflow cơ bản
+- Setup Python + Playwright trong pipeline
 - Run test headless
-- Upload report & artifact
-- Badge status trong README
+- Lưu report + video làm artifact
+- Thêm badge trạng thái build vào README
 
 ---
 
-### **PHẦN 5 – API Testing (Ngày 81 → 100)**
-- API basics: method, header, body, status code
+## PHASE 8 – API Testing (≈1.5 tuần)
+**Mục tiêu:** Có khả năng test API ở mức thực dụng cho QA Automation.
+
+- Kiến thức API cơ bản
+  - method: GET, POST, PUT, DELETE
+  - header, query params, body JSON
+  - status code
+
 - Playwright APIRequestContext
-- Validate response JSON
-- Data-driven API test
-- Kết hợp UI + API
-- Mini project API
+  - tạo request context
+  - gửi request, đọc response
+
+- Validate response
+  - status code
+  - field trong JSON
+
+- Data-driven API tests
+- Kết hợp API + UI trong cùng suite
 
 ---
 
-### **PHẦN 6 – SQL (Ngày 101 → 115)**
-- SELECT, WHERE, ORDER, LIMIT
-- JOIN các loại
-- GROUP BY & HAVING
-- Subquery
-- Test data validation bằng SQL
+## PHASE 9 – SQL (≈1 tuần)
+**Mục tiêu:** Dùng SQL để verify dữ liệu.
+
+- SELECT cơ bản
+- WHERE, ORDER BY, LIMIT
+- JOIN (INNER, LEFT)
+- GROUP BY, HAVING
+- So sánh dữ liệu UI ↔ DB
 
 ---
 
-### **PHẦN 7 – Performance Testing (Ngày 116 → 135)**
-- JMeter UI
+## PHASE 10 – Performance Testing với JMeter (≈1 tuần)
+**Mục tiêu:** Hiểu và chạy được basic load test.
+
+- Giới thiệu JMeter UI
 - Thread Group, Sampler, Listener
-- CSV Data Config
+- Config CSV Data
 - Assertions
-- Load test → Stress test → Spike test
-- Report phân tích
+- Các loại test: load, stress, spike (ở mức khái niệm + demo)
 
 ---
 
-### **PHẦN 8 – Mini Framework Automation (Ngày 136 → 160)**
-- Tạo framework hoàn chỉnh
-- POM + Fixtures + Config + Data + Reports
-- Test suite chạy CI/CD tự động
-- Viết tài liệu README cho dự án thực chiến
+## PHASE 11 – Final Automation Framework Project (≈2 tuần)
+**Mục tiêu:** Có 1 project hoàn chỉnh để show khi xin việc.
+
+- Xây framework full:
+  - POM + BasePage + fixtures + config + data
+- Viết test suite cho 1 web app demo
+- Tích hợp API + UI (nếu phù hợp)
+- Chạy trên CI, lưu report & video
+- Viết README chuẩn:
+  - cách run
+  - kiến trúc
+  - tech stack
 
 ---
 
-## Folder Structure Gợi Ý
-```
+## Gợi ý cấu trúc repo
+```bash
 python-automation-course/
 ├── README.md
 ├── day1_basics.md
 ├── day2_list.md
 ├── day3_dict.md
-├── ...
-├── playwright/
+├── day4_control_flow.md
+├── day5_string.md
+├── day6_function.md
+├── day7_exception.md
+├── day8_oop_class_object.md
+├── day9_oop_inheritance_pom.md
+├── day10_python_mini_project.md
+├── playwright-framework/
 │   ├── tests/
 │   ├── pages/
 │   ├── fixtures/
 │   ├── config/
+│   ├── data/
 │   └── utils/
 ├── api-tests/
 ├── sql/
 ├── performance/
-└── projects/
+└── final-project/
 ```
 
 ---
 
-## How to Use
-1. Học theo từng Day → tạo file .md tương ứng.
-2. Làm bài tập → commit lên Git.
-3. Khi qua Playwright → bắt đầu build framework.
-4. Mỗi major phần đều có mini project.
+## Cách sử dụng giáo trình
+1. Mỗi ngày học → tạo file `dayX_*.md` tương ứng, ghi lại lý thuyết + ví dụ + bài tập.
+2. Viết code bài tập trong repo riêng (thư mục `practice/` hoặc bên trong từng phần).
+3. Khi sang Playwright, bắt đầu build framework song song với học lý thuyết.
+4. Cuối khoá, dồn mọi thứ vào `final-project/` để thành 1 sản phẩm có thể show khi xin việc.
 
----
-
-## Kết luận
-Đây là toàn bộ chương trình 6 tháng để đạt mục tiêu Automation QA của em. Khi học đến ngày nào, em chỉ cần tạo file ngày đó và triển khai nội dung.
-
+Đây là khung chương trình đã được cô đọng để **đủ – đúng – không thừa – không thiếu** cho mục tiêu "zero to hero" với Playwright Python Automation.
