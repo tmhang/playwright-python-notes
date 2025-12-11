@@ -73,3 +73,117 @@ x = 10
 y = 3
 print(x // y)  # chia lấy nguyên
 ```
+
+## 3.2 Toán tử so sánh
+
+```python
+==, !=, >, <, >=, <=
+```
+
+## 3.3 Toán tử logic
+
+```python
+and, or, not
+```
+
+---
+
+# 4. If – Elif – Else (Cấu trúc điều kiện)
+
+Dùng để quyết định logic.
+
+## 4.1 Cú pháp
+
+```python
+if condition:
+    # do something
+elif condition2:
+    # do something
+else:
+    # do something
+```
+
+## 4.2 Ví dụ thực tế (Automation mindset)
+
+```python
+status_code = 200
+
+if status_code == 200:
+    print("Request OK")
+elif status_code == 404:
+    print("Not Found")
+else:
+    print("Unexpected error")
+```
+
+---
+
+# 5. Ép kiểu (Type casting)
+
+```python
+x = int("10")
+y = str(123)
+z = float("3.14")
+```
+
+---
+
+# 6. Input (giả lập người dùng nhập)
+
+Dùng cho một số bài tập.
+
+```python
+name = input("Nhập tên: ")
+print("Hello", name)
+```
+
+---
+
+# 7. Thực hành Day 1
+
+## Bài 1: Tạo 3 biến và in ra kiểu dữ liệu
+
+```python
+username = "Hang"
+age = 42
+is_admin = False
+
+print(type(username))
+print(type(age))
+print(type(is_admin))
+```
+
+## Bài 2: Kiểm tra điểm đậu/rớt
+
+```python
+score = 75
+if score >= 50:
+    print("Đậu")
+else:
+    print("Rớt")
+```
+
+## Bài 3: Kiểm tra role người dùng
+
+```python
+role = "admin"
+
+if role == "admin":
+    print("Có toàn quyền")
+elif role == "manager":
+    print("Quản lý")
+else:
+    print("Người dùng thường")
+```
+
+---
+
+# 8. Checklist Day 1
+
+* [ ] Hiểu biến, kiểu dữ liệu
+* [ ] Phân biệt int / float / str / bool
+* [ ] Nắm toán tử so sánh & logic
+* [ ] Viết được if/elif/else
+* [ ] Làm xong cả 3 bài tập
+
+Khi hiểu hết Day 1, em sẵn sàng sang **Day 2 – List & Loop**.
